@@ -13,7 +13,7 @@ const bgImage = new Image();
 bgImage.onload = function() {
     bgReady = true;
 };
-bgImage.src = 'images/palco.jpg';
+bgImage.src = './images/palco.jpg';
 
 //Imagem do Heroi
 let heroReady = false;
@@ -21,7 +21,7 @@ const heroImage = new Image();
 heroImage.onload = function() {
     heroReady = true;
 };
-heroImage.src = 'images/heroi.png';
+heroImage.src = './images/heroi.png';
 
 //Imagem do vilao
 let monsterReady = false;
@@ -29,7 +29,7 @@ const monsterImage = new Image();
 mosterImage.onload = function() {
     monsterReady = true;
 };
-monsterImage.src = 'images/vilao.png';
+monsterImage.src = './images/vilao.png';
 
 //Objetos do jogo
 
@@ -73,6 +73,7 @@ const update = function(modifier) {
     if (39 in keysDown) { //Pressione a seta para direita com codigo keyEvent = 39
         hero.x += hero.speed * modifier;
     }
+
     //Verificar se os personagens se encontaram.
     if (
         hero.x <= (monster.x + 64) &&

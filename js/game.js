@@ -5,6 +5,7 @@ var canvas = document.createElement('canvas');
 var ctx = canvas.getContext('2d');
 canvas.width = 800;
 canvas.height = 800;
+// document.getElementsByTagName('body')[0].appendChild(canvas);
 document.body.appendChild(canvas);
 
 //imagem de fundo
@@ -13,7 +14,7 @@ var bgImage = new Image();
 bgImage.onload = function () {
     bgReady = true;
 };
-bgImage.src = 'images/palco.jpg';
+bgImage.src = './images/palco.jpg';
 
 //Imagem do Heroi
 var heroReady = false;
@@ -21,7 +22,7 @@ var heroImage = new Image();
 heroImage.onload = function () {
     heroReady = true;
 };
-heroImage.src = 'images/heroi.png';
+heroImage.src = './images/heroi.png';
 
 //Imagem do vilao
 var monsterReady = false;
@@ -29,7 +30,7 @@ var monsterImage = new Image();
 mosterImage.onload = function () {
     monsterReady = true;
 };
-monsterImage.src = 'images/vilao.png';
+monsterImage.src = './images/vilao.png';
 
 //Objetos do jogo
 
@@ -77,6 +78,7 @@ var update = function update(modifier) {
         //Pressione a seta para direita com codigo keyEvent = 39
         hero.x += hero.speed * modifier;
     }
+
     //Verificar se os personagens se encontaram.
     if (hero.x <= monster.x + 64 && monster.x <= hero.x + 64 && hero.y <= monster.y + 64 && monster.y <= hero.y + 64) {
         ++monsterCaught;
